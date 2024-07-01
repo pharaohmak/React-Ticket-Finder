@@ -1,0 +1,383 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.conntainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.row {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__page--wrapper {
+  height: calc(100% - 20px);
+  width: 100%;
+}
+.search__navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px ;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 50px;
+}
+
+.nav__logo--img {
+  width: 100%;
+  max-width: 150px;
+}
+
+.nav__link--list {
+  display: flex;
+  width: 100%;
+  max-width: 450px;
+  justify-content: space-between;
+}
+
+.nav__links {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav__link {
+  list-style-type: none;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav__contact--btn {
+  padding: 16px 48px;
+  transition: all 0.35s ease;
+  border-radius: 50px;
+  border: none;
+  background-color: orangered;
+  color: white;
+  cursor: pointer;
+}
+
+.nav__contact--btn:hover {
+  transform: scale(1.1);
+}
+
+.landing__page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.landing__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.landing__title {
+  margin-bottom: 30px;
+  font-size: 50px;
+
+  text-align: center;
+  width: 100%;
+  max-width: 70%;
+}
+
+.landing__subtitle {
+  margin-bottom: 40px;
+}
+
+.input__wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  background-color: #fff;
+  border-radius: 20px;
+  border: 1px solid #0a1f44;
+  color: #0a1f44;
+  display: inline-block;
+  height: 70px;
+  line-height: 40px;
+  outline: none;
+  padding: 0 15px;
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  width: 100%;
+  max-width: 550px;
+  font-size: 24px;
+  padding-left: 25px;
+}
+
+.input__btn {
+  width: 200px;
+  height: 70px;
+  margin-left: 20px;
+  font-size: 40px;
+  color: #fff;
+  border-radius: 20px;
+  transition: all 0.25s ease;
+  background-color: orangered;
+  border: none;
+  padding: 14px 48px;
+  cursor: pointer;
+}
+
+.input__btn:hover {
+  transform: scale(1.1);
+}
+
+.search__header {
+  background-image: url("./Festivities\ illustration.png");
+}
+
+.search__input--wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 333px;
+}
+
+.search__info {
+  font-size: 28px;
+}
+
+.input__wrap {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.search__input {
+  color: rgba(0, 0, 0, 0.87);
+  width: 100%;
+  max-width: 800px;
+  height: 60px;
+  font-size: 20px;
+  padding-left: 20px;
+  border: 2px solid black;
+  border-radius: 9999px;
+}
+
+.search__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10000;
+  padding: 0 20px 0 8px;
+  color: #6030b1;
+  font-size: 32px;
+  transition: all 0.2s ease;
+}
+
+svg {
+  width: 50px;
+}
+
+.search__input--title {
+  font-size: 45px;
+  margin-bottom: 40px;
+  color: black;
+  font-weight: 700;
+}
+
+.list-group {
+  display: flex;
+}
+
+.content__wrapper {
+  display: flex;
+  justify-content: space-between !important;
+  width: 80%;
+  padding-top: 40px;
+}
+
+.search__nav--link {
+  color: white;
+  list-style-type: none;
+}
+
+#loading__state {
+  margin: 80px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading__state svg {
+  animation: rotate 2s linear infinite;
+}
+
+#attraction-panel {
+  display: none;
+}
+
+.events {
+  margin-top: 60px;
+}
+/* .events__panel {
+  display: none;
+
+} */
+.event__list--group {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.progress__bar--fill {
+  animation: progress 3s ease-in-out infinite;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.progress__bar--buffer {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
+@media (max-width: 768px) {
+  .content__wrapper {
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 0;
+  }
+  .search__input--title {
+    text-align: center;
+    font-size: 32px;
+  }
+  .search__navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .nav__link--list {
+    display: none;
+  }
+  .hamburger {
+    height: 25px;
+  }
+  
+  #hamburger .icon {
+    display: block;
+    background-color: transparent;
+    width: 25px;
+  }
+  svg {
+    width: 30px;
+    background-color: transparent;
+  }
+  #hamburger {
+    background-color: transparent;
+    border: none;
+  }
+  .search__input {
+    font-size: 16px;
+  }
+  .input__wrap {
+    padding: 0 16px;
+  }
+  .search__info, .price__filter--title {
+    font-size: 14px;
+  }
+  .events {
+    margin-top: 20px;
+  }
+
+}
+
+
+/* SMALL PHONES, LARGE SMARTPHONES */
+@media (max-width: 550px) {
+  .btn__menu {
+    display: block;
+  }
+
+  .nav__links {
+    display: none;
+  }
+
+  .highlight {
+    width: 100%;
+  }
+
+  .highlight:not(:last-child) {
+    margin-bottom: 24px;
+  }
+}
