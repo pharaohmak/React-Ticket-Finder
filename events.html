@@ -24,19 +24,18 @@
     ></script>
   </head>
   <body>
-    <section class="header">
-
-    </section>
     <div class="page__wrapper">
       <section class="search__header">
         <nav class="search__navbar">
-          <figure class="nav__img--wrapper">
-            <img
-              class="nav__logo--img"
-              src="https://dev.d24jig8s1lr7n9.amplifyapp.com/img/blinker-icon.4f9b2663.png"
-              alt=""
-            />
-          </figure>
+          <a href="index.html">
+            <figure class="nav__img--wrapper">
+              <img
+                class="nav__logo--img"
+                src="assets/Retro Fashion Logo.jpeg"
+                alt=""
+              />
+            </figure>
+          </a>
           <div class="nav__link--list">
             <ul class="nav__links">
               <a href="index.html">
@@ -48,18 +47,29 @@
             </ul>
             <button class="nav__contact--btn">CONTACT</button>
           </div>
-          <button id="hamburger">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>          </button>
+          <div id="hamburger">
+            <svg
+              id="hamburger__icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path
+                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+              />
+            </svg>
+          </div>
         </nav>
         <header class="search__input--wrap">
           <h1 class="search__input--title">Browse for Events</h1>
           <div class="input__wrap">
             <input
-              class="search__input"
+              id="search-input"
+              class="events__search--input"
               type="text"
               placeholder="Search by Artists, Locations, or Dates"
             />
-            <div class="search__wrap">
+            <div id="search-button" class="search__wrap">
               <svg
                 data-v-390ceb07=""
                 aria-hidden="true"
@@ -82,6 +92,15 @@
           </div>
         </header>
       </section>
+      <div class="overlay" id="overlay">
+        <div class="close-btn" id="close-btn">&times;</div>
+        <nav class="overlay-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Find Events</a></li>
+          </ul>
+        </nav>
+      </div>
       <section id="search">
         <div class="progress__bar">
           <div class="progress__bar--track"></div>
@@ -90,88 +109,106 @@
         </div>
         <div class="content__wrapper">
           <h1 class="search__info">Search results:</h1>
-          <div class="price__filter">
-            <h2 class="price__filter--title"><span>Price range: </span> " $0 to $100,000 "</h2>
-          </div>
         </div>
         <div class="slider__wrapper">
           <div role="slider"></div>
         </div>
-        <div class="events">
-          <div id="loading__content--wrapper">
-            <div id="loading__state">
-              <svg
+        <div id="loading__content--wrapper">
+          <div id="loading__state">
+            <svg
+              data-v-cf78a876=""
+              data-v-ca62299c=""
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="spinner"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="svg-inline--fa fa-spinner fa-w-16 svg"
+              style="font-size: 30px; color: rgb(96, 48, 177)"
+            >
+              <path
                 data-v-cf78a876=""
-                data-v-ca62299c=""
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="spinner"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                class="svg-inline--fa fa-spinner fa-w-16"
-                style="font-size: 30px; color: rgb(96, 48, 177)"
-              >
-                <path
-                  data-v-cf78a876=""
-                  fill="currentColor"
-                  d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"
-                  class=""
-                ></path>
-              </svg>
-            </div>
-            <div class="events">
-              <div class="container">
-                <div class="row">
-                  <div class="events__panel">
-                    <div class="events__panel--body">
-                      <div class="event__list--group">
-                          <a href="#" class="list-group-item">
-                            <h4 class="list-group-item-heading">Event title</h4>
-                            <p class="list-group-item-text">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit, sed do eiusmod tempor incididunt ut labore
-                              et dolore magna aliqua.
-                            </p>
-                            <p class="venue"></p>
-                          </a>
-                      </div>
-                      <div class="panel-footer">
-                        <nav>
-                          <ul class="pager">
-                            <li id="prev" class="previous">
-                              <a href="#"
-                                ><span aria-hidden="true">&larr;</span></a
-                              >
-                            </li>
-                            <li id="next" class="next">
-                              <a href="#"
-                                ><span aria-hidden="true">&rarr;</span></a
-                              >
-                            </li>
-                          </ul>
-                        </nav>
-                      </div>
-                    </div>
-                    <div id="attraction-panel" class="panel panel-primary">
-                      <div class="panel-heading">
-                        <h3 class="panel-title">Attraction</h3>
-                      </div>
-                      <div id="attraction" class="panel-body">
-                        <h4 class="list-group-item-heading">
-                          Attraction title
-                        </h4>
-                        <img class="col-xs-12" src="" />
-                        <p id="classification"></p>
-                      </div>
-                    </div>
+                fill="currentColor"
+                d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"
+                class=""
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6">
+              <div id="events-panel" class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Events</h3>
+                </div>
+                <div class="panel-body">
+                  <div id="events" class="list-group">
+                    <a href="#" class="list-group-item">
+                      <h4 class="list-group-item-heading">Event title</h4>
+                      <p class="list-group-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua.
+                      </p>
+                      <p class="venue"></p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                      <h4 class="list-group-item-heading">Event title</h4>
+                      <p class="list-group-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua.
+                      </p>
+                      <p class="venue"></p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                      <h4 class="list-group-item-heading">Event title</h4>
+                      <p class="list-group-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua.
+                      </p>
+                      <p class="venue"></p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                      <h4 class="list-group-item-heading">Event title</h4>
+                      <p class="list-group-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua.
+                      </p>
+                      <p class="venue"></p>
+                    </a>
                   </div>
+                </div>
+              </div>
+
+              <div id="attraction-panel" class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Attraction</h3>
+                </div>
+                <div id="attraction" class="panel-body">
+                  <h4 class="list-group-item-heading">Attraction title</h4>
+                  <img class="col-xs-12" src="" />
+                  <p id="classification"></p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script
+          src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+          integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+          crossorigin="anonymous"
+        ></script>
       </section>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

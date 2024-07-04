@@ -1,8 +1,40 @@
-const loadingState = document.getElementById('loading__state');
-const svg = loadingState.querySelector('svg');
+document.addEventListener("DOMContentLoaded", () => {
+  // Elements
+  const searchInput = document.getElementById("search__input");
+  const searchButton = document.getElementById("search__btn");
 
-svg.style.animation = 'rotate 5s linear infinite';
+  // Get the hamburger icon and overlay elements
+  const hamburger = document.getElementById("hamburger");
+  const overlay = document.getElementById("overlay");
+  const closeBtn = document.getElementById("close-btn");
 
-// Add the @keyframes rule to the stylesheet
-const stylesheet = document.styleSheets[0];
-stylesheet.insertRule('@keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }');
+  // Add event listeners to the hamburger icon and close button
+  hamburger.addEventListener("click", () => {
+    overlay.classList.toggle("active");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    overlay.classList.toggle("active");
+  });
+
+  // Search functionality
+  if (searchButton && searchInput) {
+    searchButton.addEventListener("click", handleSearch);
+    searchInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        handleSearch();
+      }
+    });
+  }
+
+  function handleSearch() {
+    const query = searchInput.value.trim();
+    if (query === "") {
+      alert("Please enter a search query.");
+      return;
+    }
+
+    localStorage.setItem("searchQuery", query);
+    window.location.href = "events.html";
+  }
+});

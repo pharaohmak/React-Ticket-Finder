@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Music Events</title>
+      <title>Ticket Finder</title>
     <link rel="stylesheet" href="style.css" />
-     <script
+    <script
       src="https://kit.fontawesome.com/700c4a0443.js"
       crossorigin="anonymous"
     ></script>
@@ -15,11 +15,7 @@
       <section class="header">
         <nav class="navbar">
           <figure class="nav__img--wrapper">
-            <img
-              class="nav__logo--img"
-              src="https://dev.d24jig8s1lr7n9.amplifyapp.com/img/blinker-icon.4f9b2663.png"
-              alt=""
-            />
+            <img class="nav__logo--img" src="assets/Retro Fashion Logo.jpeg" alt="Logo" />
           </figure>
           <div class="nav__link--list">
             <ul class="nav__links">
@@ -32,24 +28,45 @@
             </ul>
             <button class="nav__contact--btn">CONTACT</button>
           </div>
+          <div id="hamburger">
+            <svg
+              id="hamburger__icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path
+                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+              />
+            </svg>
+          </div>
         </nav>
       </section>
+      <div class="overlay" id="overlay">
+        <div class="close-btn" id="close-btn">&times;</div>
+        <nav class="overlay-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Find Events</a></li>
+          </ul>
+        </nav>
+      </div>
       <section class="landing__page">
         <div class="landing__column">
           <h1 class="landing__title">
-            Experience the Magic Live: Book Tickets for Your Favorite Artists
-            Today!
+            Experience the Magic Live: Book Tickets for Upcoming Events!
           </h1>
           <h2 class="landing__subtitle">
-            Secure Your Spot at the Hottest Concerts and Live Performances
-            Today!
+            Look up and find events, attractions, venues, and classifications
           </h2>
           <div class="input__wrapper">
             <input
               placeholder="SEARCH BY ARTIST, LOCATION, OR DATES"
               type="text"
+              id="search__input"
+              class="search__input"
             />
-            <button class="input__btn">
+            <button id="search__btn" class="input__btn">
               <svg
                 data-v-2a11e7ca=""
                 aria-hidden="true"
@@ -72,7 +89,7 @@
           </div>
         </div>
         <figure>
-            <img src="landing.png" alt="">
+          <img class="landing__img" src="assets/landing.png" alt="Landing Image" />
         </figure>
       </section>
     </div>

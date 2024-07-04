@@ -9,13 +9,13 @@
   font-style: normal;
 }
 
-.conntainer {
+.container {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f5f5f5;
+  background-color: transparent;
 }
 
 .row {
@@ -26,15 +26,21 @@
   align-items: center;
 }
 
+section {
+  width: 100%;
+  background-color: transparent;
+}
+
 .home__page--wrapper {
   height: calc(100% - 20px);
   width: 100%;
 }
+
 .search__navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px ;
+  padding: 20px 50px;
 }
 
 .navbar {
@@ -48,6 +54,7 @@
 .nav__logo--img {
   width: 100%;
   max-width: 150px;
+  justify-content: start;
 }
 
 .nav__link--list {
@@ -87,6 +94,14 @@ a {
   transform: scale(1.1);
 }
 
+#hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  cursor: pointer;
+}
+
 .landing__page {
   display: flex;
   flex-direction: column;
@@ -101,12 +116,13 @@ a {
   justify-content: center;
   align-items: center;
   margin: 50px 0;
+  padding: 1.5rem;
 }
 
 .landing__title {
   margin-bottom: 30px;
-  font-size: 50px;
-
+  font-size: 45px;
+  font-weight: 600;
   text-align: center;
   width: 100%;
   max-width: 70%;
@@ -114,6 +130,11 @@ a {
 
 .landing__subtitle {
   margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.landing__img {
+  width: 100%;
 }
 
 .input__wrapper {
@@ -159,7 +180,7 @@ input {
 }
 
 .search__header {
-  background-image: url("./Festivities\ illustration.png");
+  background-image: url("assets/Festivities\ illustration.png");
 }
 
 .search__input--wrap {
@@ -192,6 +213,16 @@ input {
   border: 2px solid black;
   border-radius: 9999px;
 }
+.events__search--input {
+  color: rgba(0, 0, 0, 0.87);
+  width: 100%;
+  max-width: 800px;
+  height: 60px;
+  font-size: 20px;
+  padding-left: 20px;
+  border: 2px solid black;
+  border-radius: 9999px;
+}
 
 .search__wrap {
   display: flex;
@@ -202,7 +233,6 @@ input {
   top: 0;
   bottom: 0;
   right: 0;
-  z-index: 10000;
   padding: 0 20px 0 8px;
   color: #6030b1;
   font-size: 32px;
@@ -220,8 +250,22 @@ svg {
   font-weight: 700;
 }
 
-.list-group {
+.event__list--group {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.list-group-item {
+  position: relative;
+  display: flex !important;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .content__wrapper {
@@ -257,20 +301,66 @@ svg {
 }
 
 #attraction-panel {
-  display: none;
+  /* display: none; */
 }
 
 .events {
   margin-top: 60px;
 }
-/* .events__panel {
-  display: none;
 
-} */
+.events__panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .event__list--group {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+
+/* Overlay styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+.overlay-menu {
+  list-style: none;
+  text-align: center;
+}
+
+.overlay-menu li {
+  margin: 20px 0;
+}
+
+.overlay-menu a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
 }
 
 @keyframes rotate {
@@ -307,77 +397,96 @@ svg {
     transform: scaleX(1);
   }
 }
-
-/* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
 @media (max-width: 768px) {
-  .content__wrapper {
+  #hamburger {
     display: flex;
-    font-size: 12px;
-    justify-content: space-between;
-    width: 100%;
-    padding-top: 0;
   }
-  .search__input--title {
-    text-align: center;
-    font-size: 32px;
-  }
-  .search__navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+  .col-xs-6 {
+    width: 100% !important;
   }
   .nav__link--list {
     display: none;
   }
-  .hamburger {
-    height: 25px;
+  .nav__img--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  
-  #hamburger .icon {
-    display: block;
-    background-color: transparent;
-    width: 25px;
+  .nav__logo--img {
+    height: 40px;
+    width: auto;
   }
-  svg {
-    width: 30px;
-    background-color: transparent;
-  }
-  #hamburger {
-    background-color: transparent;
-    border: none;
-  }
-  .search__input {
-    font-size: 16px;
-  }
-  .input__wrap {
-    padding: 0 16px;
-  }
-  .search__info, .price__filter--title {
-    font-size: 14px;
-  }
-  .events {
-    margin-top: 20px;
-  }
-
-}
-
-
-/* SMALL PHONES, LARGE SMARTPHONES */
-@media (max-width: 550px) {
-  .btn__menu {
-    display: block;
-  }
-
-  .nav__links {
+  .nav__contact--btn {
     display: none;
   }
+  .landing__page {
+    padding: 1.5rem;
+  }
+  .landing__column {
+    margin: 25px 0;
+  }
+  .landing__title {
+    font-size: 28px;
+  }
+  .landing__subtitle {
+    font-size: 18px;
+  }
+  .search__input {
+    width: 60%;
+  }
+  .input__btn {
+    height: 60px;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
-  .highlight {
+@media (max-width: 390px) {
+  .landing__column {
+    margin: 0;
+  }
+  .navbar {
+    padding: 0.5rem;
+  }
+  .landing__title {
+    font-size: 18px;
+    margin: 0 0 20px;
+  }
+  .landing__subtitle {
+    font-size: 14px;
+    text-align: center;
+  }
+  .search__input {
+    font-size: 12px;
+  }
+  svg {
+    width: 20px;
+  }
+  .landing__img {
     width: 100%;
   }
-
-  .highlight:not(:last-child) {
-    margin-bottom: 24px;
+  .search__input--wrap {
+    padding: 1.5rem;
+  }
+  .search__input--title {
+    font-size: 18px;
+  }
+  .search__navbar {
+    width: 100%;
+    padding: 1rem;
+  }
+  .search__info {
+    font-size: 12px;
+  }
+  .events__search--input {
+    font-size: 12px;
+  }
+  #search {
+    padding: 1rem;
+  }
+  .content__wrapper {
+    padding: 0;
   }
 }
