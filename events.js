@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const loadingEl = document.getElementById("loading__state");
   const searchResultsTextEl = document.querySelector(".search__info");
 
+  // Clear the search input on page load
+  searchInput.value = "";
+
   eventsListEl.style.display = "none";
   attractionsEl.style.display = "none";
   loadingEl.style.display = "none";
@@ -89,21 +92,31 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-function showEventInfo(event, href) {
+function showEventInfo(event, eventId) {
   event.preventDefault(); // Prevent default link behavior
-  localStorage.setItem("id", href); // Store the event ID in localStorage
-  window.location.href = href; // Redirect to the event details page
+  localStorage.setItem("eventId", eventId); // Store the event ID in localStorage
+
+  const eventsPanel = document.getElementById("events-panel");
+  const attractionsPanel = document.getElementById("attraction-panel");
+  eventsPanel.style.display = "none";
+  attractionsPanel.style.display = "block";
+
+  // Fetch event details and display in the attraction panel
+  fetch(`https://app.ticketmaster.com/discovery/v2/events/${eventId}.json?apikey=qZWhqtApmbArpBw5qrGmoA6xfOZtpYaZ`)
+    .then(response => response.json())
+    .then(eventData => {
+      attractionsPanel.innerHTML = attractionsHTML(eventData);
+    })
+    .catch(error => {
+      console.error("Failed to fetch event details:", error);
+      attractionsPanel.innerHTML = "<p>Failed to fetch event details.</p>";
+    });
 }
 
 function eventsHTML(event) {
-  const safeTixUrl =
-    event._embedded.ticketing && event._embedded.ticketing.length > 0
-      ? event._embedded.ticketing[0].safeTix
-      : "#"; // Provide a fallback URL if safeTix is not available
-
   return `
     <div class="event-item">
-      <a href="${safeTixUrl}" class="list-group-item" onclick="showEventInfo(event, '${safeTixUrl}')">
+      <a href="#" class="list-group-item" onclick="showEventInfo(event, '${event.id}')">
         <h4 class="list-group-item-heading">${event.name}</h4>
         <p class="list-group-item-text">${event.dates.start.localDate}</p>
         <p class="venue">${event._embedded.venues[0].name}</p>
@@ -118,11 +131,11 @@ function attractionsHTML(event) {
     : { name: "N/A", classifications: [{ genre: { name: "N/A" } }] };
 
   return `
-    <div id="attraction-panel" class="panel panel-primary">
+    <div class="panel panel-primary">
       <div class="panel-heading">
         <h3 class="panel-title">Attraction</h3>
       </div>
-      <div id="attraction" class="panel-body">
+      <div class="panel-body">
         <h4 class="list-group-item-heading">${attraction.name}</h4>
         <img class="col-xs-12" src="${
           attraction.images ? attraction.images[0].url : ""
@@ -132,6 +145,8 @@ function attractionsHTML(event) {
             ? attraction.classifications[0].genre.name
             : "N/A"
         }</p>
+        <a href=${event.url} target="_blank">${event.url}</a>
+
       </div>
     </div>
   `;
