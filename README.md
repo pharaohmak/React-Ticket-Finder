@@ -40,8 +40,5 @@ This project is an event search application that allows users to browse for even
 - Implement user authentication and profile management.
 - Enhance the UI/UX with additional interactive features and better styling.
 
-## Live Preview
-You can check out the live preview of the application [here](https://pharaohmak.github.io/Ticket-Finder/).
-
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
